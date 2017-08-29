@@ -1,0 +1,5 @@
+[run]
+include = football_manager/*
+omit = *migrations*, *tests*
+plugins =
+    django_coverage_plugin
