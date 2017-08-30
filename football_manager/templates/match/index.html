@@ -1,0 +1,130 @@
+{% extends 'base.html' %} {% block content %}
+<!-- FLEXSLIDER -->
+<section class="flex-wrapper">
+    <div id="slider" class="flexslider">
+        <ul class="slides">
+            <li>
+                <div class="flex-title">
+                    <h3>Apolloni Codicellos</h3>
+                    <p>Quo eram amet aliqua incurreret et de velit duis aut iudicem. Culpa voluptatibus incurreret magna deserunt.</p>
+                </div>
+                <img src="/static/images/photos/large1.jpg" alt="" />
+            </li>
+            <li>
+                <div class="flex-title">
+                    <h3>Apolloni Codicellos</h3>
+                    <p>Quo eram amet aliqua incurreret et de velit duis aut iudicem. Culpa voluptatibus incurreret magna deserunt.</p>
+                </div>
+                <img src="/static/images/photos/large1.jpg" alt="" />
+            </li>
+            <li>
+                <div class="flex-title">
+                    <h3>Apolloni Codicellos</h3>
+                    <p>Quo eram amet aliqua incurreret et de velit duis aut iudicem. Culpa voluptatibus incurreret magna deserunt.</p>
+                </div>
+                <img src="/static/images/photos/large1.jpg" alt="" />
+            </li>
+        </ul>
+    </div>
+</section>
+<div class="clear"></div>
+<!-- FIXTURE TITLE -->
+<div class="scores-title">Upcoming Matches & Latest Results</div>
+<!-- FIXTURE SLIDER -->
+<section class="transparent-bg">
+    <div id="fixture">
+        {% for each_match in match %}
+        <div class="slide-content">
+            <div class="match-results">
+                <span>{{each_match.team_a}}</span>
+                <span class="score">{{each_match.team_a_score}} - {{each_match.team_b_score}}</span>
+                <span>{{each_match.team_b}}</span>
+            </div>
+            <div class="match-place">
+                <span> {{each_match.match_date |date:'jS b Y g:i A'}}  03th Mar 2014 - 09:00 PM at Quamquam Stadium</span>
+                <span class="red">
+                          <a href="result.html">Report</a>
+                        </span>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="clear"></div>
+</section>
+<!-- PAGE CONTAINER -->
+<section class="pagecontainer">
+    <!-- LEFT CONTAINER -->
+    <section class="leftcontainer">
+        <h1>Latest News</h1>
+        <hr/>
+        <!-- POST -->
+        <article class="post">
+            <figure>
+                <a href="single-post.html">
+                    <img src="/static/images/photos/blog1.jpg" alt="" />
+                </a>
+                <figcaption>
+                    <h2>Post Title</h2>
+                    <div class="post-date">June,12 2014</div>
+                </figcaption>
+            </figure>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lacinia ipsum quis diam aliquam vel mollis nisi tempus. Nam et ante urna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam
+                luctus, mi vel tincidunt pulvinar, lectus urna vestibulum velit, et pharetra enim sapien eget orci. Mauris in porta neque. In hac habitasse platea dictumst.
+                <a href="single-post.html">Read more...</a>
+            </p>
+        </article>
+        <hr/>
+    </section>
+    <!-- RIGHT CONTAINER -->
+    <section class="rightcontainer">
+        <!-- SIDEBAR BOX -->
+        <div class="sidebarbox">
+            <h3>About Our Team</h3>
+            <p>Elit cernantur in pariatur. Te illum de aute, a incididunt te pariatur. Vidisse aut tempor. Eu aut lorem cernantur, occaecat dolor mandaremus consequat. Do labore excepteur, dolor id admodum. Fabulas fugiat eiusmod incididunt. Si voluptate
+                ita ullamco, iis minim incurreret voluptatibus an officia domesticarum nam cernantur est quis mentitum.
+                <a href="club.html">Read More...</a>
+            </p>
+        </div>
+        <!-- SIDEBAR BOX -->
+        <div class="sidebarbox">
+            <div class="sidebarbox-title">
+                <h3>Fixture</h3>
+            </div>
+            <!-- TABLE -->
+            <div class="fixture-row">
+                {% for each_match in match %}
+                <a href="#">
+                    <div class="fixture-row-left">
+                        {{each_match.team_a}}
+                        <div>
+                            {% if each_match.team_a_score %} {{each_match.team_a_score}} {% else %} ? {% endif %}
+                        </div>
+                    </div>
+                    <div class="fixture-row-right">
+                        <div>
+                            {% if each_match.team_b_score %} {{each_match.team_b_score}} {% else %} ? {% endif %}
+                        </div>
+                        {{each_match.team_b}}
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+</section>
+<div class="clear"></div>
+<!-- SPONSORS TITLE -->
+<div class="logos-title">Sponsors</div>
+<!-- SPONSORS SLIDER -->
+<section class="transparent-bg">
+    <div id="logos">
+        {% for each in sponsors %}
+        <div class="slide">
+            <a href="#">
+                <img src="{{ each.logo.url }}" alt="" />
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock content %}

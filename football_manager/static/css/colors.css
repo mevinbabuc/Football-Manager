@@ -1,0 +1,769 @@
+/* ----------------------
+Stylesheet Guide
+-------------------------
+
+GENERAL STYLES
+FLEXSLIDER
+BXSLIDER
+SUB MENU
+HEADER
+MAIN MENU
+YOUTUBE LIST
+HOMEPAGE FIXTURE BOX
+SPONSORS
+PAGE STRUCTURE
+BLOG
+COMMENTS
+FORMS
+TABLES
+GALLERY
+OUR TEAM
+FLEX IMAGE
+INFO BOXES
+FOOTER
+FLICKR
+SOCIAL ICONS
+BACK TO TOP BUTTON
+COLORBOX
+POPUP BOXES
+TABS
+MEDIA
+
+
+*/
+
+
+/* ================= GENERAL STYLES ================== */
+
+::-moz-selection {
+    color: #fff;
+    text-shadow: none;
+    background: #cc0000;
+}
+
+::selection {
+    color: #fff;
+    text-shadow: none;
+    background: #cc0000;
+}
+
+body {
+    color: #616161;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #000;
+}
+
+p {
+    color: #616161;
+}
+
+a {
+    color: #cc0000;
+}
+
+hr {
+    background-color: #e1e1e1;
+    background: -webkit-linear-gradient(left, #000, #000 30%, #e1e1e1 30%, #e1e1e1);
+}
+
+blockquote {
+    border-left: 3px solid #cc0000;
+    color: #fff;
+    background-color: #000;
+}
+
+
+/* ================= FLEXSLIDER ================== */
+
+.flex-direction-nav .flex-next {
+    background-color: #000;
+}
+
+.flex-direction-nav .flex-prev {
+    background-color: #000;
+}
+
+.flex-direction-nav li a:hover {
+    background-color: #cc0000;
+}
+
+.flex-title {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+}
+
+.flex-title h1,
+.flex-title h2,
+.flex-title h3,
+.flex-title h4,
+.flex-title h4,
+.flex-title h6 {
+    color: #fff;
+}
+
+.flex-title p {
+    color: #c7c7c7;
+}
+
+
+/* ================= BXSLIDER ================== */
+
+.bx-wrapper .bx-pager {
+    color: #616161;
+}
+
+.bx-wrapper .bx-pager.bx-default-pager a {
+    background: #616161;
+}
+
+.bx-wrapper .bx-pager.bx-default-pager a:hover,
+.bx-wrapper .bx-pager.bx-default-pager a.active {
+    background: #000;
+}
+
+.bx-wrapper .bx-caption {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+/* ================= SUB MENU  ================== */
+
+#mobile-menu {
+    background: #fff;
+    color: #616161 !important;
+    border-bottom: 3px solid #000;
+}
+
+#submenu {
+    background: #fff;
+    border-bottom: 3px solid #000;
+}
+
+#submenu a {
+    color: #000;
+}
+
+#submenu a:hover {
+    color: #cc0000;
+}
+
+#submenu-login {
+    background: #fff;
+    border-bottom: 3px solid #000;
+}
+
+#submenu-login a {
+    color: #000;
+}
+
+#submenu-login a:hover {
+    color: #cc0000;
+}
+
+
+/* ================= HEADER  ================== */
+
+#header {
+    background-color: rgb(13, 28, 10)
+}
+
+#header .logo span {
+    color: #fff;
+    background-color: #cc0000;
+}
+
+#header .logo span:after {
+    border-top-color: #cc0000;
+    border-right-color: #cc0000;
+}
+
+
+/* ================= MAIN MENU  ================== */
+
+#mainmenu-container {
+    background: #000;
+}
+
+.toggleMenu {
+    background: #000;
+    color: #fff !important;
+    border-bottom: 3px solid #cc0000;
+}
+
+#mainmenu {
+    background: #000;
+    border-bottom: 3px solid #cc0000;
+}
+
+#mainmenu a {
+    color: #fff;
+    background-color: #000;
+}
+
+#mainmenu a::before {
+    background: #cc0000;
+}
+
+#mainmenu ul li a {
+    background-color: #000;
+}
+
+#mainmenu ul li a::before {
+    background: #cc0000;
+}
+
+#mainmenu li li a {
+    background: #000;
+}
+
+#mainmenu li li li a {
+    background: #000;
+}
+
+
+/* ================= YOUTUBE LIST ================== */
+
+#youtube-wrapper {
+    background-color: #000;
+}
+
+.ytv-canvas {
+    background: #000;
+}
+
+.ytv-canvas ::-webkit-scrollbar-thumb {
+    background: #cc0000;
+}
+
+.ytv-list .ytv-active a {
+    color: #cc0000;
+}
+
+.ytv-list a {
+    color: #fff;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ytv-list a:hover {
+    color: #cc0000;
+}
+
+.ytv-list .ytv-thumb span {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.ytv-playlists {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.ytv-canvas ::-webkit-scrollbar-thumb {
+    background: #cc0000 !important;
+}
+
+
+/* ================= HOMEPAGE FIXTURE BOX ================== */
+
+.scores-title {
+    background-color: #000;
+    color: #fff;
+    border-top: 3px solid #fff;
+}
+
+.scores-title:after {
+    border-bottom-color: #000;
+}
+
+.scores-title:before {
+    border-bottom-color: #fff;
+}
+
+.match-results span {
+    background-color: #000;
+    color: #fff;
+}
+
+.match-results .score {
+    background-color: #cc0000;
+}
+
+.match-place span {
+    background-color: #000;
+    color: #fff;
+}
+
+.match-place .red {
+    background-color: #cc0000;
+}
+
+.match-place span a {
+    color: #fff;
+}
+
+.match-place span a:hover {
+    color: #fff;
+}
+
+
+/* ================= SPONSORS ================== */
+
+.logos-title {
+    background-color: #000;
+    color: #fff;
+}
+
+
+/* ================= PAGE STRUCTURE ================== */
+
+.pagecontainer {
+    background-color: #fff;
+    border-top: 3px solid #000;
+}
+
+.pagecontainer:after {
+    border-bottom-color: #fff;
+}
+
+.pagecontainer:before {
+    border-bottom-color: #000;
+}
+
+.transparent-bg {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.page-title {
+    background-color: #000;
+    color: #fff;
+}
+
+.fixresult-title {
+    background-color: #000;
+    color: #fff;
+    border-top: 3px solid #cc0000;
+}
+
+
+/* ================= BLOG ================== */
+
+.post figcaption {
+    background-color: #cc0000;
+    color: #fff;
+}
+
+.post figcaption h2 {
+    color: #fff;
+}
+
+.post-date {
+    background-color: #000;
+}
+
+.sidebarlist li {
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.sidebarlist li a {
+    color: #616161;
+}
+
+.sidebarlist li a:hover {
+    color: #cc0000;
+}
+
+
+/* ================= COMMENTS ================== */
+
+.comments_content {
+    border-top: 1px solid #e1e1e1;
+}
+
+.comments a.reply {
+    color: #616161;
+    background-color: #e1e1e1;
+}
+
+.comments_content {
+    border-top: 1px solid #e1e1e1;
+}
+
+.comments a.reply {
+    color: #616161;
+    background-color: #e1e1e1;
+}
+
+.comments a.reply:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+
+/* ================= FORMS ================== */
+
+input,
+textarea {
+    border: 1px solid #e1e1e1;
+    color: #000;
+    background-color: #fff;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #000;
+}
+
+.button {
+    color: #fff !important;
+    background-color: #000;
+}
+
+.button:hover {
+    background-color: #cc0000;
+}
+
+
+/* ================= TABLES ================== */
+
+.sidebarbox-title h3 {
+    color: #fff;
+    background-color: #000;
+}
+
+.fixture-row {
+    border-right: 1px solid #e1e1e1;
+    border-left: 1px solid #e1e1e1;
+}
+
+.fixture-row a {
+    color: #616161;
+}
+
+.fixture-row a:hover div {
+    background-color: #e1e1e1;
+    border-color: #e1e1e1;
+}
+
+.fixture-row-left,
+.fixture-row-right {
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.fixture-row-left {
+    border-right: 1px solid #e1e1e1;
+}
+
+
+/* ================= GALLERY ================== */
+
+.filters li a {
+    color: #fff;
+}
+
+.filters li a:hover {
+    background-color: #616161;
+}
+
+.filters li a.active {
+    background-color: #cc0000;
+}
+
+.filters {
+    background-color: #000;
+}
+
+.team-gallery li a {
+    background-color: #cc0000;
+}
+
+
+/* ================= OUR TEAM ================== */
+
+.teamlist ul li {
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.teamlist ul li:first-child {
+    border-top: 1px solid #e1e1e1;
+}
+
+.teamlist ul li a {
+    color: #616161;
+}
+
+.teamlist ul li a:hover {
+    color: #cc0000;
+}
+
+.teamlist-popup {
+    background: #fff;
+}
+
+
+/* ================= FLEX IMAGE ================== */
+
+.caption-image img {
+    border: 3px solid #000;
+}
+
+.caption-image figcaption {
+    background-color: #000;
+    color: #fff;
+}
+
+
+/* ================= INFO BOXES ================== */
+
+.message {
+    background-image: linear-gradient(135deg, rgba(255, 255, 255, .10) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .10) 50%, rgba(255, 255, 255, .10) 75%, transparent 75%, transparent);
+    border-bottom: 3px solid #cc0000;
+}
+
+.black {
+    background-color: #000;
+}
+
+.red {
+    background-color: #cc0000;
+    border-bottom-color: #000;
+}
+
+.message h5 {
+    color: #fff;
+}
+
+.message p {
+    color: #fff;
+}
+
+
+/* ================= FOOTER ================== */
+
+#footer {
+    background-color: #000;
+    border-top: 3px solid #cc0000;
+    color: #fff;
+}
+
+#footer h5 {
+    color: #fff;
+}
+
+#footer-widgets {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#footer-widgets p {
+    color: #e1e1e1;
+}
+
+.footer-widget ul li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-widget ul li a {
+    color: #e1e1e1;
+}
+
+.footer-widget ul li a:hover {
+    color: #fff;
+}
+
+.credits {
+    color: #e1e1e1;
+}
+
+
+/* ================= FLICKR  ================== */
+
+.flickr-box li img {
+    border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.flickr-box li img:hover {
+    border: 3px solid #fff;
+}
+
+
+/* ================= SOCIAL ICONS ================== */
+
+.social-icon {
+    background-color: #000;
+}
+
+.social-icon:hover {
+    background-color: #cc0000;
+}
+
+
+/* ================= BACK TO TOP BUTTON ================== */
+
+.back-to-top {
+    background-color: #000;
+}
+
+.back-to-top:hover {
+    background-color: #cc0000;
+}
+
+
+/* ================= COLORBOX ================== */
+
+#cboxOverlay {
+    background: #262626;
+}
+
+#cboxContent {
+    background: #616161;
+}
+
+.cboxIframe {
+    background: #000;
+}
+
+#cboxError {
+    border: 1px solid #c7c7c7;
+}
+
+#cboxLoadedContent {
+    background: #fff;
+    background: -moz-linear-gradient(left, #fff, #fff 50%, #000 50%, #000);
+    background: -webkit-linear-gradient(left, #fff, #fff 50%, #000 50%, #000);
+}
+
+#cboxLoadingOverlay {
+    background: #fff;
+}
+
+#cboxTitle {
+    color: #fff;
+}
+
+
+/* ================= POPUP BOXES ================== */
+
+.mfp-bg {
+    background: #000;
+}
+
+.mfp-preloader {
+    color: #c7c7c7;
+}
+
+.mfp-preloader a {
+    color: #c7c7c7;
+}
+
+.mfp-preloader a:hover {
+    color: #fff;
+}
+
+.mfp-close {
+    color: #fff;
+}
+
+.mfp-close-btn-in .mfp-close {
+    color: #000;
+}
+
+.mfp-image-holder .mfp-close,
+.mfp-iframe-holder .mfp-close {
+    color: #fff;
+}
+
+.mfp-counter {
+    color: #c7c7c7;
+}
+
+.mfp-arrow-left:after,
+.mfp-arrow-left .mfp-a {
+    border-right: 17px solid #fff;
+}
+
+.mfp-arrow-left:before,
+.mfp-arrow-left .mfp-b {
+    border-right: 27px solid #3f3f3f;
+}
+
+.mfp-arrow-right:after,
+.mfp-arrow-right .mfp-a {
+    border-left: 17px solid #fff;
+}
+
+.mfp-arrow-right:before,
+.mfp-arrow-right .mfp-b {
+    border-left: 27px solid #3f3f3f;
+}
+
+.mfp-title {
+    color: #e1e1e1;
+}
+
+
+/* ================= TABS ================== */
+
+ul.resp-tabs-list {
+    border-bottom: 3px solid #cc0000;
+    background-color: #e1e1e1;
+}
+
+.resp-tabs-list li {
+    background-color: #e1e1e1;
+}
+
+.resp-tabs-list li:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.resp-tabs-list li.resp-tab-active {
+    background-color: #000;
+    color: #fff;
+}
+
+.resp-tabs-container {
+    background-color: #fff;
+}
+
+.resp-tab-active {
+    background-color: #fff;
+}
+
+
+/*-----------Vertical tabs-----------*/
+
+.resp-vtabs ul.resp-tabs-list {
+    border-right: 3px solid #cc0000;
+}
+
+.resp-vtabs .resp-tabs-container {
+    background-color: #fff;
+}
+
+h2.resp-tab-active {
+    background-color: #000;
+    color: #fff;
+}
+
+
+/* ================= MEDIA ================== */
+
+@media only screen and (max-width: 768px) {
+    h2.resp-accordion {
+        background-color: #e1e1e1;
+    }
+    h2.resp-tab-active {
+        background-color: #cc0000;
+        color: #fff;
+    }
+    h2.resp-accordion:hover {
+        color: #fff;
+        background-color: #000;
+    }
+}

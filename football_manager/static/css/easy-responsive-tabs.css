@@ -1,0 +1,119 @@
+ul.resp-tabs-list {
+    margin: 0px 0px 25px 0px;
+    padding: 0px;
+    display: inline-block;
+    width: 100%;
+}
+.resp-tabs-list li {
+    font-size: 16px;
+    display: inline-block;
+    padding: 15px;
+    margin: 0px;
+    list-style: none;
+    cursor: pointer;
+    float: left;
+    -webkit-transition:background 0.1s ease-in-out;
+    -moz-transition:background 0.1s ease-in-out;
+    -o-transition:background 0.1s ease-in-out;
+    transition:background 0.1s ease-in-out;
+}
+.resp-tabs-container {
+    padding: 0px;
+    clear: left;
+}
+.resp-tab-content {
+    display: none;
+}
+.resp-tab-active {
+    padding: 15px !important;
+}
+.resp-tab-active {
+    border-bottom: none;
+}
+.resp-content-active, .resp-accordion-active {
+    display: block;
+}
+/*-----------Vertical tabs-----------*/
+ .resp-vtabs ul.resp-tabs-list {
+    float: left;
+    width: 30%;
+    border-bottom: none;
+}
+.resp-vtabs .resp-tabs-list li {
+    display: block;
+    padding: 15px 15px !important;
+    margin: 0;
+    cursor: pointer;
+    float: none;
+}
+.resp-vtabs .resp-tabs-container {
+    padding: 0px;
+    float: left;
+    width: 70%;
+    clear: none;
+}
+.resp-vtabs .resp-tab-content {
+    border: none;
+    padding-left: 30px;
+}
+.resp-vtabs li.resp-tab-active {
+    position: relative;
+    z-index: 1;
+    padding: 15px !important;
+}
+h2.resp-tab-active {
+    margin-bottom: 0px !important;
+    padding: 15px 15px !important;
+}
+h2.resp-tab-active span.resp-arrow {
+    border: none;
+}
+.resp-arrow {
+    width: 0;
+    height: 0;
+    float: right;
+    margin-top: 3px;
+}
+/*-----------Accordion styles-----------*/
+h2.resp-accordion {
+    cursor: pointer;
+    display: none;
+    font-size: 18px;
+    margin: 0px;
+    padding: 15px;
+}
+.resp-easy-accordion h2.resp-accordion {
+    display: block;
+}
+.resp-jfit {
+    width: 100%;
+    margin: 0px;
+}
+.resp-tab-content-active {
+    display: block;
+}
+@media only screen and (max-width: 768px) {
+    ul.resp-tabs-list {
+        display: none;
+    }
+    h2.resp-accordion {
+        display: block;
+    }
+    .resp-vtabs .resp-tab-content {
+        padding-left: 0px;
+    }
+    .resp-vtabs .resp-tabs-container {
+        border: none;
+        float: none;
+        width: 100%;
+        min-height: initial;
+        clear: none;
+    }
+    .resp-accordion-closed {
+        display:none !important;
+    }
+    .resp-tabs-container > div {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+}
