@@ -1,0 +1,37 @@
+{% extends 'base.html' %} {% block content %}
+<!-- PAGE TITLE -->
+<div class="page-title">Fixture and Results</div>
+<!-- FEATURED IMAGE -->
+<div class="page-img">
+    <img src="images/photos/featured.jpg" alt="" />
+</div>
+<!-- PAGE CONTAINER -->
+<section class="pagecontainer">
+    <table>
+        <thead>
+            <tr>
+                <th>Group</th>
+                <th>Team</th>
+                <th>Wins</th>
+                <th>Loss</th>
+                <th>Knockout</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for group_name, team in standings.items %} {% for team_name, team_stats in team.items %}
+            <tr>
+                <td>{{group_name}}</td>
+                <td>{{team_name}}</td>
+                <td>{{team_stats.wins}}</td>
+                <td>{{team_stats.loss}}</td>
+                {% if team_stats.knockout %}
+                <td>Yes</td>
+                {% else %}
+                <td>No</td>
+                {% endif %}
+            </tr>
+            {% endfor %} {% endfor %}
+    </table>
+</section>
+
+{% endblock content %}
