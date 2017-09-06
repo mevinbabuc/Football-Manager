@@ -17,7 +17,8 @@ from .base import *  # noqa
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
 # Raises ImproperlyConfigured exception if DJANGO_SECRET_KEY not in os.environ
-SECRET_KEY = env('DJANGO_SECRET_KEY')
+# SECRET_KEY = env('DJANGO_SECRET_KEY')
+SECRET_KEY = env('DJANGO_SECRET_KEY', default='Xf$=mevinasd576u23ggfhuuid@*L{IE}xmW&hUw=w2Dy*De?-))PGu')
 
 
 # This ensures that Django will be able to detect a secure connection
@@ -35,16 +36,16 @@ MIDDLEWARE = WHITENOISE_MIDDLEWARE + MIDDLEWARE
 # and https://docs.djangoproject.com/en/dev/howto/deployment/checklist/#run-manage-py-check-deploy
 
 # set this to 60 seconds and then to 518400 when you can prove it works
-SECURE_HSTS_SECONDS = 60
-SECURE_HSTS_INCLUDE_SUBDOMAINS = env.bool(
-    'DJANGO_SECURE_HSTS_INCLUDE_SUBDOMAINS', default=True)
-SECURE_CONTENT_TYPE_NOSNIFF = env.bool(
-    'DJANGO_SECURE_CONTENT_TYPE_NOSNIFF', default=True)
-SECURE_BROWSER_XSS_FILTER = True
-SESSION_COOKIE_SECURE = True
-SESSION_COOKIE_HTTPONLY = True
-SECURE_SSL_REDIRECT = env.bool('DJANGO_SECURE_SSL_REDIRECT', default=True)
-CSRF_COOKIE_SECURE = True
+# SECURE_HSTS_SECONDS = 60
+# SECURE_HSTS_INCLUDE_SUBDOMAINS = env.bool(
+#     'DJANGO_SECURE_HSTS_INCLUDE_SUBDOMAINS', default=True)
+# SECURE_CONTENT_TYPE_NOSNIFF = env.bool(
+#     'DJANGO_SECURE_CONTENT_TYPE_NOSNIFF', default=True)
+# SECURE_BROWSER_XSS_FILTER = True
+# SESSION_COOKIE_SECURE = True
+# SESSION_COOKIE_HTTPONLY = True
+# SECURE_SSL_REDIRECT = env.bool('DJANGO_SECURE_SSL_REDIRECT', default=True)
+# CSRF_COOKIE_SECURE = True
 CSRF_COOKIE_HTTPONLY = True
 X_FRAME_OPTIONS = 'DENY'
 
@@ -52,7 +53,7 @@ X_FRAME_OPTIONS = 'DENY'
 # ------------------------------------------------------------------------------
 # Hosts/domain names that are valid for this site
 # See https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS', default=['football.com', ])
+ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS', default=['cclkochin.com', ])
 # END SITE CONFIGURATION
 
 INSTALLED_APPS += ['gunicorn', ]
@@ -63,29 +64,29 @@ INSTALLED_APPS += ['gunicorn', ]
 # Uploaded Media Files
 # ------------------------
 # See: http://django-storages.readthedocs.io/en/latest/index.html
-INSTALLED_APPS += ['storages', ]
+# INSTALLED_APPS += ['storages', ]
 
-AWS_ACCESS_KEY_ID = env('DJANGO_AWS_ACCESS_KEY_ID')
-AWS_SECRET_ACCESS_KEY = env('DJANGO_AWS_SECRET_ACCESS_KEY')
-AWS_STORAGE_BUCKET_NAME = env('DJANGO_AWS_STORAGE_BUCKET_NAME')
-AWS_AUTO_CREATE_BUCKET = True
-AWS_QUERYSTRING_AUTH = False
+# AWS_ACCESS_KEY_ID = env('DJANGO_AWS_ACCESS_KEY_ID')
+# AWS_SECRET_ACCESS_KEY = env('DJANGO_AWS_SECRET_ACCESS_KEY')
+# AWS_STORAGE_BUCKET_NAME = env('DJANGO_AWS_STORAGE_BUCKET_NAME')
+# AWS_AUTO_CREATE_BUCKET = True
+# AWS_QUERYSTRING_AUTH = False
 
 # AWS cache settings, don't change unless you know what you're doing:
-AWS_EXPIRY = 60 * 60 * 24 * 7
+# AWS_EXPIRY = 60 * 60 * 24 * 7
 
 # TODO See: https://github.com/jschneier/django-storages/issues/47
 # Revert the following and use str after the above-mentioned bug is fixed in
 # either django-storage-redux or boto
-control = 'max-age=%d, s-maxage=%d, must-revalidate' % (AWS_EXPIRY, AWS_EXPIRY)
-AWS_HEADERS = {
-    'Cache-Control': bytes(control, encoding='latin-1')
-}
+# control = 'max-age=%d, s-maxage=%d, must-revalidate' % (AWS_EXPIRY, AWS_EXPIRY)
+# AWS_HEADERS = {
+#     'Cache-Control': bytes(control, encoding='latin-1')
+# }
 
 # URL that handles the media served from MEDIA_ROOT, used for managing
 # stored files.
-MEDIA_URL = 'https://s3.amazonaws.com/%s/' % AWS_STORAGE_BUCKET_NAME
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# MEDIA_URL = 'https://s3.amazonaws.com/%s/' % AWS_STORAGE_BUCKET_NAME
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 
 # Static Assets
@@ -96,17 +97,24 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # EMAIL
 # ------------------------------------------------------------------------------
 DEFAULT_FROM_EMAIL = env('DJANGO_DEFAULT_FROM_EMAIL',
-                         default='Football Manager <noreply@football.com>')
+                         default='Football Manager <noreply@cclkochin.com>')
 EMAIL_SUBJECT_PREFIX = env('DJANGO_EMAIL_SUBJECT_PREFIX', default='[Football Manager]')
 SERVER_EMAIL = env('DJANGO_SERVER_EMAIL', default=DEFAULT_FROM_EMAIL)
 
+
+EMAIL_PORT = 1025
+
+EMAIL_HOST = 'localhost'
+EMAIL_BACKEND = env('DJANGO_EMAIL_BACKEND', default='django.core.mail.backends.console.EmailBackend')
+
+
 # Anymail with Mailgun
-INSTALLED_APPS += ['anymail', ]
-ANYMAIL = {
-    'MAILGUN_API_KEY': env('DJANGO_MAILGUN_API_KEY'),
-    'MAILGUN_SENDER_DOMAIN': env('MAILGUN_SENDER_DOMAIN')
-}
-EMAIL_BACKEND = 'anymail.backends.mailgun.MailgunBackend'
+# INSTALLED_APPS += ['anymail', ]
+# ANYMAIL = {
+#     'MAILGUN_API_KEY': env('DJANGO_MAILGUN_API_KEY'),
+#     'MAILGUN_SENDER_DOMAIN': env('MAILGUN_SENDER_DOMAIN')
+# }
+# EMAIL_BACKEND = 'anymail.backends.mailgun.MailgunBackend'
 
 # TEMPLATE CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -122,7 +130,7 @@ TEMPLATES[0]['OPTIONS']['loaders'] = [
 
 # Use the Heroku-style specification
 # Raises ImproperlyConfigured exception if DATABASE_URL not in os.environ
-DATABASES['default'] = env.db('DATABASE_URL')
+# DATABASES['default'] = env.db('DATABASE_URL')
 
 # CACHING
 # ------------------------------------------------------------------------------
