@@ -23,7 +23,7 @@ SECRET_KEY = env('DJANGO_SECRET_KEY', default='Xf$=mevinasd576u23ggfhuuid@*L{IE}
 
 # This ensures that Django will be able to detect a secure connection
 # properly on Heroku.
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 # Use Whitenoise to serve static files
 # See: https://whitenoise.readthedocs.io/
 WHITENOISE_MIDDLEWARE = ['whitenoise.middleware.WhiteNoiseMiddleware', ]

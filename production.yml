@@ -3,7 +3,6 @@ version: '2'
 volumes:
   postgres_data: {}
   postgres_backup: {}
-  # caddy: {}
 
 services:
   django:
@@ -22,17 +21,6 @@ services:
       - postgres_data:/var/lib/postgresql/data
       - postgres_backup:/backups
     env_file: .env
-
-  # caddy:
-  #   build: ./compose/caddy
-  #   depends_on:
-  #     - django
-  #   ports:
-  #     - "0.0.0.0:80:80"
-  #     - "0.0.0.0:443:443"
-  #   volumes:
-  #     - caddy:/root/.caddy
-  #   env_file: .env
 
   nginx:
     image: nginx
