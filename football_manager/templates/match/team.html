@@ -16,7 +16,7 @@
             <ul>
                 {% for player in team.player_set.all %}
                 <li>
-                    {{player.name}}
+                    {% if player.photo %}
                     <a href="#shelby" class="popup-with-zoom-anim">{{player.name}}</a>
                     <div id="shelby" class="teamlist-popup zoom-anim-dialog mfp-hide">
                         <img src="{{player.photo.url}}" alt="" />
@@ -24,6 +24,7 @@
                         <!--<p>Eram ex vidisse ita eiusmod quem legam expetendis nisi, ea elit ingeniis adipisicing, ita ingeniis reprehenderit, probant duis singulis, consequat id vidisse, ne elit domesticarum, quae sed pariatur. Duis de mentitum an amet, malis
                             ita occaecat est magna. Senserit fugiat o incurreret fidelissimae, si quid reprehenderit.</p>-->
                     </div>
+                    {% else %} {{player.name}} {% endif %}
                 </li>
                 {% endfor %}
             </ul>
