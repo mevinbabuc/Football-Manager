@@ -6,7 +6,8 @@ from django.views import defaults as default_views
 
 urlpatterns = [
     # Django Admin, use {% url 'admin:index' %}
-    url(settings.ADMIN_URL, admin.site.urls),
+    # url(settings.ADMIN_URL, admin.site.urls),
+    url(r'^admin/', include(admin.site.urls)),
 
     # User management
     url(r'^', include('football_manager.match.urls', namespace='matches')),
