@@ -27,6 +27,8 @@ services:
 
   nginx:
     image: nginx
+    depends_on:
+      - django
     ports:
       - "0.0.0.0:80:80"
     volumes:
