@@ -1,0 +1,19 @@
+{% extends 'base.html' %} {% block content %}
+<!-- PAGE TITLE -->
+<div class="page-title">Rules</div>
+<!-- FEATURED IMAGE -->
+<div class="page-img">
+    <img src="images/photos/featured.jpg" alt="" />
+</div>
+<!-- PAGE CONTAINER -->
+<section class="pagecontainer">
+    <ul class="sidebarlist">
+        {% for rule in rules %}
+        <li>
+            {{rule.rule}}
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+
+{% endblock content %}

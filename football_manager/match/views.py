@@ -1,5 +1,5 @@
 from django.views.generic import TemplateView
-from . models import Match, Team, Sponsor, Group
+from . models import Match, Team, Sponsor, Group, Rule, Standings
 
 
 class HomePage(TemplateView):
@@ -64,26 +64,15 @@ class StandingsPage(TemplateView):
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
 
-        group_queryset = Group.objects.all()
-        standings = {}
-
-        for group in group_queryset:
-            group_name = group.name
-
-            if group.name not in standings:
-                standings[group_name] = {}
-
-            teams = group.team_set.all()
-            team_dict = {}
-            for team in teams:
-                team_dict[team.name] = {
-                    'wins': team.wins,
-                    'loss': team.losses,
-                    'knockout': team.knockout
-                }
-
-            standings[group_name] = team_dict
-
-        context['standings'] = standings
+        context['standings'] = Standings.objects.all()
         return context
 
+
+class RulesPage(TemplateView):
+    template_name = 'match/rules.html'
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+
+        context['rules'] = Rule.objects.all()
+        return context

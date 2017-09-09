@@ -10,27 +10,33 @@
     <table>
         <thead>
             <tr>
-                <th>Group</th>
+                <th>Place</th>
                 <th>Team</th>
+                <th>Games Played (GP)</th>
                 <th>Wins</th>
+                <th>Draws</th>
                 <th>Loss</th>
-                <th>Knockout</th>
+                <th>Goals F</th>
+                <th>Goals A</th>
+                <th>Goals D</th>
+                <th>Points</th>
             </tr>
         </thead>
         <tbody>
-            {% for group_name, team in standings.items %} {% for team_name, team_stats in team.items %}
+            {% for each_standing in standings %}
             <tr>
-                <td>{{group_name}}</td>
-                <td>{{team_name}}</td>
-                <td>{{team_stats.wins}}</td>
-                <td>{{team_stats.loss}}</td>
-                {% if team_stats.knockout %}
-                <td>Yes</td>
-                {% else %}
-                <td>No</td>
-                {% endif %}
+                <td>{{each_standing.place}}</td>
+                <td>{{each_standing.team}}</td>
+                <td>{{each_standing.gp}}</td>
+                <td>{{each_standing.wins}}</td>
+                <td>{{each_standing.draws}}</td>
+                <td>{{each_standing.losses}}</td>
+                <td>{{each_standing.goals_f}}</td>
+                <td>{{each_standing.goals_a}}</td>
+                <td>{{each_standing.goals_d}}</td>
+                <td>{{each_standing.points}}</td>
             </tr>
-            {% endfor %} {% endfor %}
+            {% endfor %}
     </table>
 </section>
 

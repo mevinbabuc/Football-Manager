@@ -16,10 +16,6 @@ class Team(models.Model):
     name = models.CharField(_('Name of Team'), blank=True, max_length=255)
     group = models.ForeignKey(Group, null=True)
 
-    wins = models.PositiveIntegerField("Total wins", default=0)
-    losses = models.PositiveIntegerField("Total loss", default=0)
-    knockout = models.BooleanField("is a Knockout", default=False)
-
     def __str__(self):
         return "{0} - Group {1}".format(self.name, self.group)
 
@@ -57,3 +53,35 @@ class Sponsor(models.Model):
 
     def __str__(self):
         return self.name
+
+
+@python_2_unicode_compatible
+class Standings(models.Model):
+    place = models.PositiveIntegerField("Team ranking")
+    team = models.ForeignKey(Team)
+    gp = models.PositiveIntegerField("Games Played", default=0)
+
+    wins = models.PositiveIntegerField("Total wins", default=0)
+    draws = models.PositiveIntegerField("Total draws", default=0)
+    losses = models.PositiveIntegerField("Total loss", default=0)
+
+    goals_f = models.PositiveIntegerField("Goals F", default=0)
+    goals_a = models.PositiveIntegerField("Goals A", default=0)
+    goals_d = models.PositiveIntegerField("Goals D", default=0)
+
+    points = models.PositiveIntegerField("Points", default=0)
+
+    class Meta:
+        ordering = ['place']
+
+    def __str__(self):
+        return "Team {0} - rank {1}".format(self.team, self.place)
+
+
+@python_2_unicode_compatible
+class Rule(models.Model):
+    rule = models.TextField('rule')
+
+    def __str__(self):
+        return self.rule
+

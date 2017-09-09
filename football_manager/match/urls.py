@@ -23,4 +23,9 @@ urlpatterns = [
         view=views.StandingsPage.as_view(),
         name='standingspage'
     ),
+    url(
+        regex=r'^rules/$',
+        view=views.RulesPage.as_view(),
+        name='rulespage'
+    ),
 ]
