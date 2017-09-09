@@ -112,19 +112,4 @@
         </div>
     </section>
 </section>
-<div class="clear"></div>
-<!-- SPONSORS TITLE -->
-<div class="logos-title">Sponsors</div>
-<!-- SPONSORS SLIDER -->
-<section class="transparent-bg">
-    <div id="logos">
-        {% for each in sponsors %}
-        <div class="slide">
-            <a href="#">
-                <img src="{{ each.logo.url }}" alt="" />
-            </a>
-        </div>
-        {% endfor %}
-    </div>
-</section>
 {% endblock content %}
