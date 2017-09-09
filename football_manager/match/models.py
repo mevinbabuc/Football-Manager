@@ -27,6 +27,7 @@ class Team(models.Model):
 @python_2_unicode_compatible
 class Player(models.Model):
     name = models.CharField(_('Name of Player'), blank=True, max_length=255)
+    photo = models.ImageField(null=True)
     team = models.ForeignKey(Team)
 
     def __str__(self):
