@@ -52,6 +52,7 @@ coverage.xml
 
 # Django stuff:
 staticfiles/
+media/
 
 # Flask stuff:
 instance/
@@ -300,7 +301,8 @@ tags
 pyvenv.cfg
 pip-selfcheck.json
 
-
+#nginx stuff
+ngx_pagespeed/
 
 
 football_manager/media/
