@@ -34,6 +34,7 @@ class TeamPage(TemplateView):
                 buckets[bucket_counter].append(team)
 
         context['buckets'] = buckets
+        context['sponsors'] = Sponsor.objects.all()
         return context
 
 
@@ -55,6 +56,7 @@ class FixturePage(TemplateView):
             buckets[match_date].append(match)
 
         context['fixtures'] = buckets
+        context['sponsors'] = Sponsor.objects.all()
         return context
 
 
@@ -65,6 +67,7 @@ class StandingsPage(TemplateView):
         context = super().get_context_data(*args, **kwargs)
 
         context['standings'] = Standings.objects.all()
+        context['sponsors'] = Sponsor.objects.all()
         return context
 
 
@@ -75,4 +78,5 @@ class RulesPage(TemplateView):
         context = super().get_context_data(*args, **kwargs)
 
         context['rules'] = Rule.objects.all()
+        context['sponsors'] = Sponsor.objects.all()
         return context

@@ -67,7 +67,7 @@ class Standings(models.Model):
 
     goals_f = models.PositiveIntegerField("Goals F", default=0)
     goals_a = models.PositiveIntegerField("Goals A", default=0)
-    goals_d = models.PositiveIntegerField("Goals D", default=0)
+    goals_d = models.IntegerField("Goals D", default=0)
 
     points = models.PositiveIntegerField("Points", default=0)
 
