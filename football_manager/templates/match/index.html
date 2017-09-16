@@ -38,9 +38,9 @@
             <div class="match-results">
                 <span>{{each_match.team_a}}</span>
                 <span class="score">
-                  {% if each_match.team_a_score or each_match.team_a_score == 0 %} {{each_match.team_a_score}} {% else %} ? {% endif %}
+                  {% if each_match.team_a_score or each_match.team_a_score == 0 %} {{each_match.team_a_score}} {% if each_match.penalty_a_score or each_match.penalty_a_score == 0 %} ({{each_match.penalty_a_score}}) {% endif %} {% else %} ? {% endif %}
                   -
-                  {% if each_match.team_b_score or each_match.team_b_score == 0 %} {{each_match.team_b_score}} {% else %} ? {% endif %}
+                  {% if each_match.team_b_score or each_match.team_b_score == 0 %} {{each_match.team_b_score}} {% if each_match.penalty_b_score or each_match.penalty_b_score == 0 %} ({{each_match.penalty_b_score}}) {% endif %} {% else %} ? {% endif %}
                   </span>
                 <span>{{each_match.team_b}}</span>
             </div>
@@ -96,12 +96,12 @@
                 <div class="fixture-row-left">
                     {{each_match.team_a}}
                     <div>
-                        {% if each_match.team_a_score or each_match.team_a_score == 0 %} {{each_match.team_a_score}} {% else %} ? {% endif %}
+                        {% if each_match.team_a_score or each_match.team_a_score == 0 %} {{each_match.team_a_score}} {% if each_match.penalty_a_score or each_match.penalty_a_score == 0 %} ({{each_match.penalty_a_score}}) {% endif %} {% else %} ? {% endif %}
                     </div>
                 </div>
                 <div class="fixture-row-right">
                     <div>
-                        {% if each_match.team_b_score or each_match.team_b_score == 0 %} {{each_match.team_b_score}} {% else %} ? {% endif %}
+                        {% if each_match.team_b_score or each_match.team_b_score == 0 %} {{each_match.team_b_score}} {% if each_match.penalty_b_score or each_match.penalty_b_score == 0 %} ({{each_match.penalty_b_score}}) {% endif %} {% else %} ? {% endif %}
                     </div>
                     {{each_match.team_b}}
                 </div>

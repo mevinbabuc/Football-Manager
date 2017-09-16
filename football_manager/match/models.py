@@ -40,6 +40,12 @@ class Match(models.Model):
     team_a_score = models.SmallIntegerField(editable=True, null=True, blank=True)
     team_b_score = models.SmallIntegerField(editable=True, null=True, blank=True)
 
+    penalty_a_score = models.SmallIntegerField(editable=True, null=True, blank=True)
+    penalty_b_score = models.SmallIntegerField(editable=True, null=True, blank=True)
+
+    message_a = models.TextField('Team A score timings', blank=True, null=True)
+    message_b = models.TextField('Team B score timings', blank=True, null=True)
+
     winning_team = models.ForeignKey(Team, null=True, blank=True)
 
     def __str__(self):
@@ -52,6 +58,12 @@ class Match(models.Model):
 
         if (self.team_b_score or self.team_b_score == 0) and self.team_a_score in ['', None]:
             self.team_a_score = 0
+
+        if (self.penalty_a_score or self.penalty_a_score == 0) and self.penalty_b_score in ['', None]:
+            self.penalty_b_score = 0
+
+        if (self.penalty_b_score or self.penalty_b_score == 0) and self.penalty_a_score in ['', None]:
+            self.penalty_a_score = 0
 
         super().save()
 

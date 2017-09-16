@@ -18,19 +18,33 @@
 
             {% for each_match_date, matches in fixtures.items %}
             <div>
-                <!--<div class="sidebarbox-title">
+                <div class="sidebarbox-title">
                     <h3>Fixture and Results / {{each_match_date}}</h3>
-                </div>-->
+                </div>
                 <!-- TABLE -->
                 <div class="fixture-row">
                     {% for each_match in matches %}
                     <div class="fixture-row-left">{{each_match.team_a}}
-                        <div>{% if each_match.team_a_score or each_match.team_a_score == 0 %} {{each_match.team_a_score}} {% else %} ? {% endif %}</div>
+                        <div>
+                            {% if each_match.team_a_score or each_match.team_a_score == 0 %} {{each_match.team_a_score}} {% if each_match.penalty_a_score or each_match.penalty_a_score == 0 %} ({{each_match.penalty_a_score}}) {% endif %} {% else %} ? {% endif %}
+                        </div>
                     </div>
                     <div class="fixture-row-right">
-                        <div>{% if each_match.team_b_score or each_match.team_b_score == 0 %} {{each_match.team_b_score}} {% else %} ? {% endif %}</div>{{each_match.team_b}}
+                        <div>
+                            {% if each_match.team_b_score or each_match.team_b_score == 0 %} {{each_match.team_b_score}} {% if each_match.penalty_b_score or each_match.penalty_b_score == 0 %} ({{each_match.penalty_b_score}}) {% endif %} {% else %} ? {% endif %}
+                        </div>
+                        {{each_match.team_b}}
                     </div>
-                    {% endfor %}
+                    {% if each_match.message_a or each_match.message_b %}
+                    <div class="fixture-row-message">
+                        <div class="fixture-row-message-left">
+                            {{each_match.message_a|linebreaks}}
+                        </div>
+                        <div class="fixture-row-message-right">
+                            {{each_match.message_b|linebreaks}}
+                        </div>
+                    </div>
+                    {% endif %} {% endfor %}
                 </div>
             </div>
             {% endfor %}

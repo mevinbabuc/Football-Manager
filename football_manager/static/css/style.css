@@ -1030,7 +1030,7 @@ textarea {
 .fixture-row-right {
     padding: 10px;
     width: 50%;
-    height: 40px;
+    height: 50px;
 }
 
 .fixture-row-left div {
@@ -1053,6 +1053,48 @@ textarea {
     float: right;
     text-align: right;
 }
+
+.fixture-row-message {
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    vertical-align: bottom;
+    max-height: 100px;
+    overflow-y: scroll;
+    border-bottom: red 1px dashed;
+}
+
+.fixture-row-message-left,
+.fixture-row-message-right {
+    padding: 10px;
+    width: 50%;
+    border-right: 1px solid #e1e1e1;
+}
+
+.fixture-row-message-left {
+    float: left;
+}
+
+.fixture-row-message-right {
+    float: right;
+    text-align: right;
+}
+
+
+/*.fixture-row-left-message {
+    float: left;
+}
+
+.fixture-row-right-message {
+    float: right;
+    padding-right: 15px;
+}
+
+.fixture-row-left-message,
+fixture-row-right-message {
+    padding: 10px;
+    width: 50%;
+}*/
 
 
 /* ================= GALLERY ================== */
