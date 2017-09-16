@@ -7,6 +7,8 @@
 </div>
 <!-- PAGE CONTAINER -->
 <section class="pagecontainer">
+    {% for group_name, group_standings in standings.items %}
+    <h2>Group {{group_name}}</h2>
     <table>
         <thead>
             <tr>
@@ -23,7 +25,7 @@
             </tr>
         </thead>
         <tbody>
-            {% for each_standing in standings %}
+            {% for each_standing in group_standings %}
             <tr>
                 <td>{{each_standing.place}}</td>
                 <td>{{each_standing.team}}</td>
@@ -38,6 +40,7 @@
             </tr>
             {% endfor %}
     </table>
+    {% endfor %}
 </section>
 
 {% endblock content %}

@@ -66,7 +66,18 @@ class StandingsPage(TemplateView):
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
 
-        context['standings'] = Standings.objects.all()
+        standings = Standings.objects.all()
+
+        standings_dict = {}
+        for each in standings:
+            group_name = each.team.group
+
+            if group_name not in standings_dict:
+                standings_dict[group_name] = []
+
+            standings_dict[group_name].append(each)
+
+        context['standings'] = standings_dict
         context['sponsors'] = Sponsor.objects.all()
         return context
 
