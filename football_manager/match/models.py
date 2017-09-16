@@ -17,7 +17,7 @@ class Team(models.Model):
     group = models.ForeignKey(Group, null=True)
 
     def __str__(self):
-        return "{0} - Group {1}".format(self.name, self.group)
+        return "{0}".format(self.name)
 
 
 @python_2_unicode_compatible
