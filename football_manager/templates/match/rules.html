@@ -10,7 +10,7 @@
     <ul class="sidebarlist">
         {% for rule in rules %}
         <li>
-            {{rule.rule}}
+            {{rule.rule|linebreaks}}
         </li>
         {% endfor %}
     </ul>
