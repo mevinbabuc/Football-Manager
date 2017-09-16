@@ -37,11 +37,15 @@
         <div class="slide-content">
             <div class="match-results">
                 <span>{{each_match.team_a}}</span>
-                <span class="score">{{each_match.team_a_score}} - {{each_match.team_b_score}}</span>
+                <span class="score">
+                  {% if each_match.team_a_score or each_match.team_a_score == 0 %} {{each_match.team_a_score}} {% else %} ? {% endif %}
+                  -
+                  {% if each_match.team_b_score or each_match.team_b_score == 0 %} {{each_match.team_b_score}} {% else %} ? {% endif %}
+                  </span>
                 <span>{{each_match.team_b}}</span>
             </div>
             <div class="match-place">
-                <span> {{each_match.match_date |date:'jS b Y g:i A'}}  03th Mar 2014 - 09:00 PM at Quamquam Stadium</span>
+                <span> {{each_match.match_date |date:'jS b Y g:i A'}} at Espirito, Kochi Football Arena</span>
                 <span class="red">
                           <a href="/fixtures/">Report</a>
                         </span>
@@ -87,25 +91,23 @@
         <!-- SIDEBAR BOX -->
         <div class="sidebarbox">
             <div class="sidebarbox-title">
-                <h3>Fixture</h3>
+                <h3>Results</h3>
             </div>
             <!-- TABLE -->
             <div class="fixture-row">
                 {% for each_match in match %}
-                <a href="#">
-                    <div class="fixture-row-left">
-                        {{each_match.team_a}}
-                        <div>
-                            {% if each_match.team_a_score %} {{each_match.team_a_score}} {% else %} ? {% endif %}
-                        </div>
+                <div class="fixture-row-left">
+                    {{each_match.team_a}}
+                    <div>
+                        {% if each_match.team_a_score or each_match.team_a_score == 0 %} {{each_match.team_a_score}} {% else %} ? {% endif %}
                     </div>
-                    <div class="fixture-row-right">
-                        <div>
-                            {% if each_match.team_b_score %} {{each_match.team_b_score}} {% else %} ? {% endif %}
-                        </div>
-                        {{each_match.team_b}}
+                </div>
+                <div class="fixture-row-right">
+                    <div>
+                        {% if each_match.team_b_score or each_match.team_b_score == 0 %} {{each_match.team_b_score}} {% else %} ? {% endif %}
                     </div>
-                </a>
+                    {{each_match.team_b}}
+                </div>
                 {% endfor %}
             </div>
         </div>

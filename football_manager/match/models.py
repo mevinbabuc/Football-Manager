@@ -37,13 +37,23 @@ class Match(models.Model):
 
     match_date = models.DateTimeField()
 
-    team_a_score = models.SmallIntegerField(default=0, editable=True)
-    team_b_score = models.SmallIntegerField(default=0, editable=True)
+    team_a_score = models.SmallIntegerField(editable=True, null=True, blank=True)
+    team_b_score = models.SmallIntegerField(editable=True, null=True, blank=True)
 
     winning_team = models.ForeignKey(Team, null=True, blank=True)
 
     def __str__(self):
         return "{0} vs {1}".format(self.team_a.name, self.team_b.name)
+
+    def save(self):
+
+        if (self.team_a_score or self.team_a_score == 0) and self.team_b_score in ['', None]:
+            self.team_b_score = 0
+
+        if (self.team_b_score or self.team_b_score == 0) and self.team_a_score in ['', None]:
+            self.team_a_score = 0
+
+        super().save()
 
 
 @python_2_unicode_compatible
