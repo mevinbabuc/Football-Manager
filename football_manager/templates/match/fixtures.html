@@ -24,14 +24,12 @@
                 <!-- TABLE -->
                 <div class="fixture-row">
                     {% for each_match in matches %}
-                    <a href="#">
-                        <div class="fixture-row-left">{{each_match.team_a}}
-                            <div>{% if each_match.team_a_score or each_match.team_a_score == 0 %} {{each_match.team_a_score}} {% else %} ? {% endif %}</div>
-                        </div>
-                        <div class="fixture-row-right">
-                            <div>{% if each_match.team_b_score or each_match.team_b_score == 0 %} {{each_match.team_b_score}} {% else %} ? {% endif %}</div>{{each_match.team_b}}
-                        </div>
-                    </a>
+                    <div class="fixture-row-left">{{each_match.team_a}}
+                        <div>{% if each_match.team_a_score or each_match.team_a_score == 0 %} {{each_match.team_a_score}} {% else %} ? {% endif %}</div>
+                    </div>
+                    <div class="fixture-row-right">
+                        <div>{% if each_match.team_b_score or each_match.team_b_score == 0 %} {{each_match.team_b_score}} {% else %} ? {% endif %}</div>{{each_match.team_b}}
+                    </div>
                     {% endfor %}
                 </div>
             </div>
