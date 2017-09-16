@@ -1,5 +1,6 @@
+from datetime import datetime, timedelta
 from django.views.generic import TemplateView
-from . models import Match, Team, Sponsor, Group, Rule, Standings
+from . models import Match, Team, Sponsor, Rule, Standings
 
 
 class HomePage(TemplateView):
@@ -8,6 +9,7 @@ class HomePage(TemplateView):
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
 
+        context['upcoming_match'] = Match.objects.filter(match_date__gte=datetime.now() - timedelta(days=5))
         context['match'] = Match.objects.all()
         context['sponsors'] = Sponsor.objects.all()
         return context
