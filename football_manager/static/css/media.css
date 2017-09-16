@@ -3,33 +3,37 @@
         display: none !important;
     }
 }
+
 @media only screen and (max-width:1024px) {
-    .fixture-row-left, .fixture-row-right {
+    /*.fixture-row-left,
+    .fixture-row-right {
         width: 100%;
-    }
+}
+*/
     .fixture-row-left {
         border-right: none;
-        border-bottom-style:dashed;
-    }    
+        border-bottom-style: dashed;
+    }
 }
+
 @media only screen and (max-width:900px) {
     #mobile-menu {
-    background-image: url("../images/downArrow2.png");
-    background-repeat: no-repeat;
-    background-position: 95% 50%;
+        background-image: url("../images/downArrow2.png");
+        background-repeat: no-repeat;
+        background-position: 95% 50%;
     }
     .toggleMenu {
-    background-image: url("../images/downArrow.png");
-    background-repeat: no-repeat;
-    background-position: 95% 50%;
+        background-image: url("../images/downArrow.png");
+        background-repeat: no-repeat;
+        background-position: 95% 50%;
     }
     #mainmenu {
-        float:none;
-    }
-    #mainmenu > li {
         float: none;
     }
-    #mainmenu > li > .parent {
+    #mainmenu>li {
+        float: none;
+    }
+    #mainmenu>li>.parent {
         background-image: url("../images/downArrow.png");
         background-repeat: no-repeat;
         background-position: 95% 50%;
@@ -45,9 +49,9 @@
         background-position: 95% 50%;
     }
     #mainmenu {
-        float:none;
-        line-height:40px;
-        padding-right:0px;
+        float: none;
+        line-height: 40px;
+        padding-right: 0px;
     }
     #mainmenu ul li:first-child {
         margin-top: 0px;
@@ -59,17 +63,19 @@
         display: block;
         width: 100%;
     }
-    #mainmenu > li.hover > ul, #mainmenu li li.hover ul {
+    #mainmenu>li.hover>ul,
+    #mainmenu li li.hover ul {
         position: static;
     }
-    #mainmenu a::before, #mainmenu ul li a::before {
-        -webkit-transition:none;
+    #mainmenu a::before,
+    #mainmenu ul li a::before {
+        -webkit-transition: none;
         -moz-transition: none;
         -o-transition: none;
         -ms-transition: none;
     }
     #mainmenu a:hover::before {
-        height:0%;
+        height: 0%;
     }
     #mainmenu ul li a {
         padding: 5px 30px;
@@ -82,10 +88,10 @@
         display: block;
     }
     .flex-title {
-        display:none;
+        display: none;
     }
     #submenu {
-        width:100%;
+        width: 100%;
         display: none;
     }
     #submenu ul li {
@@ -113,16 +119,18 @@
     #submenu-login ul li:last-child {
         padding-bottom: 10px;
     }
-    #submenu a, #submenu-login a {
+    #submenu a,
+    #submenu-login a {
         padding-top: 10px;
         padding-bottom: 10px;
     }
 }
+
 @media only screen and (max-width:800px) {
     .leftcontainer {
         width: 100%;
         float: none;
-        padding-right:0px;
+        padding-right: 0px;
         margin-bottom: 30px;
     }
     .rightcontainer {
@@ -130,9 +138,11 @@
         float: none;
         padding-left: 0px;
     }
-    .first-clmn, .second-clmn, .third-clmn {
-        padding:0px 0px 30px 0px;
-        width:100%;
+    .first-clmn,
+    .second-clmn,
+    .third-clmn {
+        padding: 0px 0px 30px 0px;
+        width: 100%;
     }
     .scores-title {
         font-size: 26px;
@@ -154,39 +164,43 @@
         margin-bottom: 0px;
         padding-top: 0px;
     }
-    h1, .page-title, .scores-title {
-        font-size:26px;
+    h1,
+    .page-title,
+    .scores-title {
+        font-size: 26px;
     }
     h2 {
-        font-size:22px;
+        font-size: 22px;
     }
     h3 {
-        font-size:20px;
+        font-size: 20px;
     }
     h4 {
-        font-size:18px;
+        font-size: 18px;
     }
     h5 {
-        font-size:16px;
+        font-size: 16px;
     }
     h6 {
-        font-size:14px;
+        font-size: 14px;
     }
     #header .logo span {
-        font-size:26px;
+        font-size: 26px;
     }
 }
+
 @media only screen and (max-width:800px) {
-    .ytv-list .ytv-thumb img{
+    .ytv-list .ytv-thumb img {
         width: 80px;
     }
-    .ytv-list .ytv-content{ 
-        padding-left: 85px; 
+    .ytv-list .ytv-content {
+        padding-left: 85px;
     }
 }
+
 @media only screen and (max-width:640px) {
     #header .logo span {
-        margin:0px;
+        margin: 0px;
         float: left;
         display: block;
         width: 100%;
@@ -199,38 +213,40 @@
         margin-bottom: 15px;
     }
     #header .logo span:after {
-        display:none;
+        display: none;
     }
-    #youtube-wrapper{
-	height: 600px;
+    #youtube-wrapper {
+        height: 600px;
     }
-    .ytv-list .ytv-thumb img{
+    .ytv-list .ytv-thumb img {
         display: none !important;
     }
-    .ytv-list .ytv-content{
+    .ytv-list .ytv-content {
         padding-left: 5px !important;
     }
-    .ytv-list-header img,.ytv-list .ytv-playlists .ytv-thumb img{
+    .ytv-list-header img,
+    .ytv-list .ytv-playlists .ytv-thumb img {
         display: none !important;
     }
-    .ytv-list-header span{
+    .ytv-list-header span {
         font-size: 14px;
     }
-    .ytv-video{
+    .ytv-video {
         right: 0;
-	}
-    .ytv-list{
-    width: 100%;
+    }
+    .ytv-list {
+        width: 100%;
         margin-top: 300px;
         height: 300px;
-	}
-    .ytv-video iframe{
-		height: 300px;
+    }
+    .ytv-video iframe {
+        height: 300px;
     }
 }
+
 @media only screen and (max-width:480px) {
     .team-gallery li {
-        width:100% !important;
+        width: 100% !important;
     }
     .filters li a {
         line-height: 3;

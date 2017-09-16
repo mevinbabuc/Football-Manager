@@ -9,37 +9,39 @@
 <section class="pagecontainer">
     {% for group_name, group_standings in standings.items %}
     <h2>Group {{group_name}}</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Place</th>
-                <th>Team</th>
-                <th>Games Played (GP)</th>
-                <th>Wins</th>
-                <th>Draws</th>
-                <th>Loss</th>
-                <th>Goals F</th>
-                <th>Goals A</th>
-                <th>Goals D</th>
-                <th>Points</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for each_standing in group_standings %}
-            <tr>
-                <td>{{each_standing.place}}</td>
-                <td>{{each_standing.team}}</td>
-                <td>{{each_standing.gp}}</td>
-                <td>{{each_standing.wins}}</td>
-                <td>{{each_standing.draws}}</td>
-                <td>{{each_standing.losses}}</td>
-                <td>{{each_standing.goals_f}}</td>
-                <td>{{each_standing.goals_a}}</td>
-                <td>{{each_standing.goals_d}}</td>
-                <td>{{each_standing.points}}</td>
-            </tr>
-            {% endfor %}
-    </table>
+    <div class="make-table-scrollable">
+        <table>
+            <thead>
+                <tr>
+                    <th>Place</th>
+                    <th>Team</th>
+                    <th>Games Played (GP)</th>
+                    <th>Wins</th>
+                    <th>Draws</th>
+                    <th>Loss</th>
+                    <th>Goals F</th>
+                    <th>Goals A</th>
+                    <th>Goals D</th>
+                    <th>Points</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for each_standing in group_standings %}
+                <tr>
+                    <td>{{each_standing.place}}</td>
+                    <td>{{each_standing.team}}</td>
+                    <td>{{each_standing.gp}}</td>
+                    <td>{{each_standing.wins}}</td>
+                    <td>{{each_standing.draws}}</td>
+                    <td>{{each_standing.losses}}</td>
+                    <td>{{each_standing.goals_f}}</td>
+                    <td>{{each_standing.goals_a}}</td>
+                    <td>{{each_standing.goals_d}}</td>
+                    <td>{{each_standing.points}}</td>
+                </tr>
+                {% endfor %}
+        </table>
+    </div>
     {% endfor %}
 </section>
 
