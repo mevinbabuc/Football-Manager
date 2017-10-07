@@ -1,7 +1,8 @@
 Football Manager
 ================
 
-A football/soccer content management system, that can show fixtures, team details and some stats
+A football/soccer content management system, that can show fixtures, team details and some stats.
+The template used for the site is not OpenSource and is a paid one. It's here only for demo purpose and should not be used elsewhere.
 
 .. image:: https://img.shields.io/badge/built%20with-Cookiecutter%20Django-ff69b4.svg
      :target: https://github.com/pydanny/cookiecutter-django/
