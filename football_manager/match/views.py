@@ -10,7 +10,7 @@ class HomePage(TemplateView):
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
 
-        context['upcoming_match'] = Match.objects.filter(match_date__gte=datetime.now() - timedelta(days=5))
+        context['upcoming_match'] = Match.objects.filter(match_date__gte=datetime.now() - timedelta(days=5)).order_by('match_date')
         context['match'] = Match.objects.filter(match_date__gte=datetime.now() - timedelta(days=5), team_a_score__isnull=False).order_by('match_date')[:5]
         context['sponsors'] = Sponsor.objects.all()
         return context
