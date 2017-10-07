@@ -1,6 +1,7 @@
 from datetime import datetime, timedelta
 from django.views.generic import TemplateView
 from . models import Match, Team, Sponsor, Rule, Standings
+from collections import OrderedDict
 
 
 class HomePage(TemplateView):
@@ -70,7 +71,7 @@ class StandingsPage(TemplateView):
 
         standings = Standings.objects.all().order_by('team__group')
 
-        standings_dict = {}
+        standings_dict = OrderedDict()
         for each in standings:
             group_name = each.team.group
 
