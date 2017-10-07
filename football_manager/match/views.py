@@ -68,7 +68,7 @@ class StandingsPage(TemplateView):
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
 
-        standings = Standings.objects.all()
+        standings = Standings.objects.all().order_by('team__group')
 
         standings_dict = {}
         for each in standings:
