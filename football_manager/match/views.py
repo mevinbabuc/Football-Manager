@@ -47,7 +47,7 @@ class FixturePage(TemplateView):
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
 
-        match_queryset = Match.objects.all().order_by('-match_date')
+        match_queryset = Match.objects.all().order_by('match_date')
 
         buckets = dict()
         for match in match_queryset:
